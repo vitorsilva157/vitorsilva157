@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dados dos Usuários</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #searchInput {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function searchTable() {
+            // Obter o valor do termo de pesquisa
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+
+            // Obter a tabela
+            var table = document.getElementById("dataTable");
+
+            // Obter as linhas da tabela
+            var rows = table.getElementsByTagName("tr");
+
+            // Loop pelas linhas e ocultar aquelas que não correspondem ao termo de pesquisa
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                var match = false;
+                for (var j = 0; j < cells.length; j++) {
+                    var cell = cells[j];
+                    if (cell) {
+                        if (cell.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+                if (match) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Dados dos Usuários</h2>
+    <input type="text" id="searchInput" placeholder="Digite um termo de pesquisa...">
+    <button onclick="searchTable()">Pesquisar</button>
+    <table id="dataTable">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Telefone</th>
+            <th>Setor</th>
+            <th>Vacinas</th>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>Vitor Silva</td>
+            <td>25</td>
+            <td>(62) 9876-5432</td>
+            <td>Setor Gavarelo</td>
+            <td>Johnson & Johnson: Janssen</td>
+        </tr>
+        <tr>
+            <td>002</td>
+            <td>Maria Santos</td>
+            <td>34</td>
+            <td>(62) 9123-4567</td>
+            <td>Setor Bueno</td>
+            <td>Johnson & Johnson: Janssen</td>
+        </tr>
+        <tr>
+            <td>003</td>
+            <td>Pedro Oliveira</td>
+            <td>42</td>
+            <td>(62) 8765-4321</td>
+            <td>Setor Bueno</td>
+            <td>Johnson &amp; Johnson: Janssen</td>
+        </tr>
+        <tr>
+            <td>004</td>
+            <td>Ana Souza</td>
+            <td>29</td>
+            <td>(62) 9012-3456</td>
+            <td>Setor Central</td>
+            <td>Pfizer-BioNTech</td>
+        </tr>
+        <tr>
+            <td>005</td>
+            <td>Carlos Almeida</td>
+            <td>38</td>
+            <td>(62) 7654-3210</td>
+            <td>Setor Bueno</td>
+            <td>Johnson &amp; Johnson: Janssen</td>
+        </tr>
+        <tr>
+            <td>006</td>
+            <td>Laura Pereira</td>
+            <td>31</td>
+            <td>(62) 8901-2345</td>
+            <td>Setor Bueno</td>
+            <td>Johnson &amp; Johnson: Janssen</td>
+        </tr>
+        <tr>
+            <td>007</td>
+            <td>Lucas Costa</td>
+            <td>27</td>
+            <td>(62) 6543-2109</td>
+            <td>Setor Oeste</td>
+            <td>Febre Amarela</td>
+        </tr>
+        <tr>
+            <td>008</td>
+            <td>Mariana Fernandes</td>
+            <td>36</td>
+            <td>(62) 7890-1234</td>
+            <td>Setor Oeste</td>
+            <td>Febre Amarela</td>
+        </tr>
+        <tr>
+            <td>009</td>
+            <td>Gustavo Rodrigues</td>
+            <td>23</td>
+            <td>(62) 5432-1098</td>
+            <td>Setor Oeste</td>
+            <td>Febre Amarela</td>
+        </tr>
+        <tr>
+            <td>010</td>
+            <td>Isabela Nunes</td>
+            <td>41</td>
+            <td>(62) 6789-0123</td>
+            <td>Setor Oeste</td>
+            <td>Febre Amarela</td>
+        </tr>
+        <tr>
+            <td>011</td>
+            <td>Rafael Barbosa</td>
+            <td>32</td>
+            <td>(62) 4321-0987</td>
+            <td>Setor Oeste</td>
+            <td>Febre Amarela</td>
+        </tr>
+        <tr>
+            <td>012</td>
+            <td>Larissa Andrade</td>
+            <td>28</td>
+            <td>(62) 5678-9012</td>
+            <td>Setor Oeste</td>
+            <td>Febre Amarela</td>
+        </tr>
+        <tr>
+            <td>013</td>
+            <td>Fernando Cardoso</td>
+            <td>33</td>
+            <td>(62) 3210-9876</td>
+            <td>Setor Sul</td>
+            <td>Hepatite B</td>
+        </tr>
+        <tr>
+            <td>014</td>
+            <td>Amanda Gomes</td>
+            <td>39</td>
+            <td>(62) 4567-8901</td>
+            <td>Setor Sul</td>
+            <td>Hepatite B</td>
+        </tr>
+        <tr>
+            <td>015</td>
+            <td>Felipe Ribeiro</td>
+            <td>26</td>
+            <td>(62) 2109-8765</td>
+            <td>Setor Sul</td>
+            <td>Hepatite B</td>
+        </tr>
+        <tr>
+            <td>016</td>
+            <td>Camila Castro</td>
+            <td>37</td>
+            <td>(62) 3456-7890</td>
+            <td>Setor Sul</td>
+            <td>Hepatite B</td>
+        </tr>
+        <tr>
+            <td>017</td>
+            <td>Guilherme Pinto</td>
+            <td>24</td>
+            <td>(62) 1098-5432</td>
+            <td>Setor Sul</td>
+            <td>Hepatite B</td>
+        </tr>
+        <tr>
+            <td>018</td>
+            <td>Carolina Lima</td>
+            <td>35</td>
+            <td>(62) 2345-6789</td>
+            <td>Setor Buriti Sereno</td>
+            <td>Hepatite B</td>
+        </tr>
+        <tr>
+            <td>019</td>
+            <td>André Carvalho</td>
+            <td>30</td>
+            <td>(62) 0987-4321</td>
+            <td>Setor Buriti Sereno</td>
+            <td>Hepatite B</td>
+        </tr>
+        <tr>
+            <td>020</td>
+            <td>Gabriela Torres</td>
+            <td>43</td>
+            <td>(62) 9012-3456</td>
+            <td>Setor Buriti Sereno</td>
+            <td>BCG</td>
+        </tr>
+        <tr>
+            <td>021</td>
+            <td>Thiago Mendes</td>
+            <td>22</td>
+            <td>(62) 8765-4321</td>
+            <td>Setor Buriti Sereno</td>
+            <td>BCG</td>
+        </tr>
+        <tr>
+            <td>022</td>
+            <td>Letícia Moreira</td>
+            <td>40</td>
+            <td>(62) 8901-2345</td>
+            <td>Setor Buriti Sereno</td>
+            <td>BCG</td>
+        </tr>
+        <tr>
+            <td>023</td>
+            <td>Bruno Marques</td>
+            <td>29</td>
+            <td>(62) 6543-2109</td>
+            <td>Setor Buriti Sereno</td>
+            <td>BCG</td>
+        </tr>
+        <tr>
+            <td>024</td>
+            <td>Natália Duarte</td>
+            <td>31</td>
+            <td>(62) 7890-1234</td>
+            <td>Setor Marista</td>
+            <td>BCG</td>
+        </tr>
+        <tr>
+            <td>025</td>
+            <td>Renato Siqueira</td>
+            <td>38</td>
+            <td>(62) 5432-1098</td>
+            <td>Setor Marista</td>
+            <td>BCG</td>
+        </tr>
+        <tr>
+            <td>026</td>
+            <td>Sofia Ferreira</td>
+            <td>27</td>
+            <td>(62) 6789-0123</td>
+            <td>Setor Marista</td>
+            <td>Não vacinou</td>
+        </tr>
+        <tr>
+            <td>027</td>
+            <td>Henrique Freitas</td>
+            <td>34</td>
+            <td>(62) 4321-0987</td>
+            <td>Setor Marista</td>
+            <td>Não vacinou</td>
+        </tr>
+        <tr>
+            <td>028</td>
+            <td>Beatriz Rocha</td>
+            <td>36</td>
+            <td>(62) 5678-9012</td>
+            <td>Setor Marista</td>
+            <td>Não vacinou</td>
+        </tr>
+        <tr>
+            <td>029</td>
+            <td>Daniel Cunha</td>
+            <td>25</td>
+            <td>(62) 3210-9876</td>
+            <td>Setor Central</td>
+            <td>Não vacinou</td>
+        </tr>
+        <tr>
+            <td>030</td>
+            <td>Juliana Vasconcelos</td>
+            <td>33</td>
+            <td>(62) 4567-8901</td>
+            <td>Setor Central</td>
+            <td>Não vacinou</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+    
+
+   
